@@ -1,0 +1,103 @@
+<body>
+   
+    <div class="parentSize container">
+        <div class="parent">
+
+            <div class="text"> Register With Us </div>
+            <div class="form-group">
+                <label for="user"> First Name </label>
+                <input type="text" placeholder="Enter username" id="user" name="usern" onblur="checkOne()" style="margin-left: 31px;">
+                <div id="div1"> </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="user"> Last Name </label>
+                <input type="text" placeholder="Enter username" id="user" name="usern" onblur="checkOne()" style="margin-left: 31px;">
+                <div id="div1"> </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mail"> Email </label>
+                <input type="email" placeholder="Enter Email" id="mail" name="mail" onblur="checkTwo()" style="margin-left: 60px;">
+                <div id="div2"> </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="password"> Password </label>
+                <input type="password" placeholder="Enter Password" id="password" name="pass" onblur="checkThree()" style="margin-left: 31px;">
+                <div id="div3"> </div>
+            </div>
+
+            <div class="form-group">
+                <label for="password2">Confirm Password</label>
+                <input type="password" placeholder="Password again" id="password2" name="pass" onblur="checkFour()" style="margin-right: 10px;">
+                <div id="div4"> </div>
+            </div>
+            <div>
+                <div>
+                    <!-- <label> Remember Password </label>
+                    <input type="checkbox"> -->
+
+                </div>
+            </div>
+
+            <div class="form-group d-flex align-items-center justify-content-between mt-4 mb-0">
+                <!-- <a href="password" routerLink="changepassword" routerLinkActive="active"> -->
+                <!-- <i class="fa fa-users" aria-hidden="true"></i> Forget Password -->
+                <!-- </a> -->
+
+                <a class="btn btn-primary" href="index.html" style="margin-top: 0; margin-left: 60px; width: 150px;" routerLink="login" > Sign up </a>
+                <br>
+                <br>
+
+            </div>
+
+
+            <!-- <input class="btn btn-primary" type="submit" value="Submit" class="submit" onclick=" checkOne() ,checkTwo(), checkThree() , checkFour()" style="margin-left: 60px;"> -->
+
+        </div>
+
+    </div>
+    <script>
+        function checkOne() {
+            if (document.getElementById("user").value < 3) {
+                document.getElementById("div1").innerHTML = "Username must be at least 3 characters"
+                document.getElementById("div1").style = " color: red; text-align:left "
+                document.getElementById("user").style.border = "2px  solid red "
+                    //  document.getElementById("user").focus();
+
+            }
+        }
+
+        function checkTwo() {
+            if (!(document.getElementById("mail").value == "/\S+@\S+\.\S+/")) {
+                document.getElementById("div2").innerHTML = "Email is not valid"
+                document.getElementById("div2").style = " color: red; text-align:left "
+                document.getElementById("mail").style.border = "2px  solid red ";
+                // document.getElementById("mail").focus();
+            }
+        }
+
+        function checkThree() {
+            if (document.getElementById("password").value < 6) {
+                document.getElementById("div3").innerHTML = "Password must be at least 6 characters"
+                document.getElementById("div3").style = " color: red; text-align:left "
+                document.getElementById("password").style.border = "2px  solid red ";
+                // document.getElementById("password").focus();
+            }
+
+        }
+
+        function checkFour() {
+            if (document.getElementById("password2").value < 6) {
+                document.getElementById("div4").innerHTML = "Password2 is required"
+                document.getElementById("div4").style = " color: red; text-align:left "
+                document.getElementById("password2").style.border = "2px  solid red ";
+                //  document.getElementById("password2").focus();
+            }
+        }
+    </script>
+
+</body>

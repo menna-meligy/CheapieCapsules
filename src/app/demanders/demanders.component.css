@@ -1,0 +1,15 @@
+p{
+    background-size: 100% 100%;
+}
+
+.container {
+    padding-top: 30px;
+    padding-left: 40px;
+    background-color: rgb(255, 255, 255);
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    margin-top: -510px;
+    margin-left: 910px;
+    }
+    
