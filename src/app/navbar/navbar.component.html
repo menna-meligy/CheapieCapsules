@@ -1,0 +1,203 @@
+<body
+  class="sb-nav-fixed container-fluid"
+  style="z-index: 20000l; height: 180px"
+>
+  <ul
+    class="nav nav-pills mb-3"
+    id="pills-tab"
+    role="tablist"
+    color="DodgerBlue"
+  >
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link active"
+        id="pills-home-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-home"
+        type="button"
+        role="tab"
+        aria-controls="pills-home"
+        aria-selected="true"
+        routerLink=""
+      >
+        HOME
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-profile-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-profile"
+        type="button"
+        role="tab"
+        aria-controls="pills-profile"
+        aria-selected="false"
+        routerLink="services"
+      >
+        ABOUT US
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="toggle"
+      >
+        OUR CERVICES
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/buyer"
+        *ngIf="isAuthenticated && role === 'demander'"
+      >
+        FOR DEMANDERS
+      </button>
+    </li>
+
+
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/medicineform"
+        *ngIf="isAuthenticated && role === 'pharmacist'"
+      >
+        Stocks
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/registerpharmacists"
+        *ngIf="isAuthenticated && role === 'pharmacist'"
+      >
+        Giver List
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/demanders"
+        *ngIf="isAuthenticated && role === 'pharmacist'"
+      >
+        User List
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/giver"
+        *ngIf="isAuthenticated && role === 'supplier'"
+      >
+        For suppliers
+      </button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+      >
+        CONTACT US
+      </button>
+    </li>
+    <li *ngIf="!isAuthenticated" style="display: flex" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/register"
+      >
+        SIGN UP
+      </button>
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        routerLink="/login"
+      >
+        Log In
+      </button>
+    </li>
+    <li *ngIf="isAuthenticated" role="presentation">
+      <button
+        class="nav-link"
+        id="pills-contact-tab"
+        data-bs-toggle="pill"
+        data-bs-target="#pills-contact"
+        type="button"
+        role="tab"
+        aria-controls="pills-contact"
+        aria-selected="false"
+        (click)="onLogout()"
+      >
+        Log Out
+      </button>
+    </li>
+  </ul>
+  <!--
+      <div class="tab-content" id="pills-tabContent">
+
+        <div class="tab-pane fade show active" class="" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">...</div>
+        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">...</div>
+        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">...</div>
+      </div>
+--></body>

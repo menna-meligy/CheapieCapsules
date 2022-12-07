@@ -1,0 +1,172 @@
+<div class="header">
+  <mat-form-field appearance="outline">
+    <input
+      matInput
+      [(ngModel)]="filter.search"
+      (keyup)="onMedicineSearch()"
+      placeholder="Search for medicine"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <button
+    class="btn btn-success"
+    style="height: 40px"
+    data-bs-toggle="modal"
+    id="add_modal"
+    data-bs-target="#exampleModal"
+  >
+    Add medicine
+  </button>
+</div>
+
+<div>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+        The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef>Name</th>
+      <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="date">
+      <th mat-header-cell *matHeaderCellDef>Expiration Date</th>
+      <td mat-cell *matCellDef="let element">
+        {{ element.expirationdate | date }}
+      </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef>Price</th>
+      <td mat-cell *matCellDef="let element">{{ element.price }}</td>
+    </ng-container>
+    <ng-container matColumnDef="dosage">
+      <th mat-header-cell *matHeaderCellDef>Dosage</th>
+      <td mat-cell *matCellDef="let element">{{ element.dosage }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let element">
+        <mat-icon class="cursor" (click)="updateMedicine(element)"
+          >edit</mat-icon
+        >
+        <mat-icon
+          class="cursor"
+          (click)="deleteMedicine(element._id)"
+          style="position: relative; left: 10px"
+          >delete</mat-icon
+        >
+      </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+  <mat-paginator
+    [length]="paginationObj.totalCount"
+    [pageSize]="5"
+    (page)="onPageChange($event)"
+    [pageSizeOptions]="[5, 10]"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</div>
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="exampleModal"
+  tabindex="-1"
+  aria-labelledby="exampleModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+          {{ id ? "Update Medicine" : "Add Medicine" }}
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"
+              >Medicine Name</label
+            >
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              [(ngModel)]="medicineModelObj.name"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Dosage</label>
+            <input
+              type="number"
+              name="dosage"
+              [(ngModel)]="medicineModelObj.dosage"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+
+          <mat-form-field appearance="outline" style="width: fit-content">
+            <mat-label>Choose a date</mat-label>
+            <input
+              name="date"
+              [(ngModel)]="medicineModelObj.expirationdate"
+              matInput
+              [matDatepicker]="picker"
+            />
+            <mat-datepicker-toggle
+              matIconSuffix
+              [for]="picker"
+            ></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Price</label>
+            <input
+              type="number"
+              name="price"
+              [(ngModel)]="medicineModelObj.price"
+              class="form-control"
+              id="exampleInputPassword1"
+            />
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          id="modal"
+          class="btn btn-secondary"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="postMedicineDetails()"
+        >
+          {{ id ? "Update " : "Add " }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

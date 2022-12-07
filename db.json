@@ -1,0 +1,160 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2,
+      "medicineName": "",
+      "dosage": ""
+    },
+    {
+      "id": 3,
+      "medicineName": "",
+      "dosage": ""
+    },
+    {
+      "id": 4,
+      "medicineName": "",
+      "dosage": ""
+    },
+    {
+      "id": 5,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 6,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 7,
+      "medicineName": " ",
+      "dosage": " ",
+      "expirationdate": " "
+    },
+    {
+      "id": 8,
+      "medicineName": null,
+      "dosage": null,
+      "expirationdate": null
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13,
+      "medicineName": " ",
+      "dosage": " ",
+      "expirationdate": " "
+    },
+    {
+      "id": 14,
+      "medicineName": "",
+      "dosage": " test",
+      "expirationdate": ""
+    },
+    {
+      "id": 15,
+      "medicineName": "",
+      "dosage": " test",
+      "expirationdate": ""
+    },
+    {
+      "id": 16,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 17,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 18,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 19,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 20,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 21,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 22,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 23,
+      "medicineName": "ddf",
+      "dosage": "dfgd",
+      "expirationdate": "dfgd"
+    },
+    {
+      "id": 24,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 25,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 26,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    },
+    {
+      "id": 27,
+      "medicineName": "",
+      "dosage": "",
+      "expirationdate": ""
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

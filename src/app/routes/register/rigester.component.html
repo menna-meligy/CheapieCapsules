@@ -1,0 +1,119 @@
+<div
+  class="parentSize container"
+  style="display: flex; justify-content: center"
+>
+  <mat-card>
+    <mat-card-title>Register With Us</mat-card-title>
+    <mat-divider></mat-divider>
+    <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+      <div class="section">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="user"> First Name </mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="firstname"
+              placeholder="Enter username"
+              id="user"
+              name="usern"
+              style="margin-left: 31px"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="user"> Last Name </mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="lastname"
+              id="user"
+              name="usern"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="section">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="user"> Email </mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="email"
+              id="user"
+              name="usern"
+            />
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="mail"> Role </mat-label>
+            <mat-select formControlName="role" id="cars">
+              <mat-option value="supplier">Supplier</mat-option>
+              <mat-option value="demander">Demander</mat-option>
+              <mat-option value="pharmacist">Pharmacist</mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="section">
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="user"> Password </mat-label>
+            <input
+              type="password"
+              matInput
+              (blur)="onPasswordCheck()"
+              formControlName="password"
+              id="user"
+              name="usern"
+            />
+          </mat-form-field>
+        </div>
+
+        <div class="form-group">
+          <mat-form-field appearance="outline">
+            <mat-label for="user">Confirm Password </mat-label>
+            <input
+              type="password"
+              (blur)="onPasswordCheck()"
+              matInput
+              formControlName="confirmpassword"
+              id="user"
+              name="usern"
+            />
+          </mat-form-field>
+        </div>
+      </div>
+      <div>
+        <div>
+          <!-- <label> Remember Password </label>
+                  <input type="checkbox"> -->
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <div
+        class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
+      >
+        <!-- <a href="password" routerLink="changepassword" routerLinkActive="active"> -->
+        <!-- <i class="fa fa-users" aria-hidden="true"></i> Forget Password -->
+        <!-- </a> -->
+        <span>Already Register? <a routerLink="/login">Login Here</a></span>
+        <button
+          class="btn btn-primary"
+          type="submit"
+          [disabled]="isPasswordMatch || registerForm.invalid"
+          style="margin-top: 0; margin-left: 60px; width: 150px"
+        >
+          Sign up
+        </button>
+        <br />
+        <br />
+      </div>
+    </form>
+  </mat-card>
+  <!-- <input class="btn btn-primary" type="submit" value="Submit" class="submit" onclick=" checkOne() ,checkTwo(), checkThree() , checkFour()" style="margin-left: 60px;"> -->
+</div>

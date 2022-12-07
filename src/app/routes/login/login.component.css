@@ -1,0 +1,11 @@
+body {
+  background-image: ('../../../assets/images/4.jpg');
+}
+
+
+form {
+  margin: 20px;
+}
+mat-form-field{
+  width: 100%;
+}

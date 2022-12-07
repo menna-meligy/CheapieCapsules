@@ -1,0 +1,46 @@
+<div
+  class="parentSize container"
+  style="display: flex; justify-content: center"
+>
+  <mat-card style="width: fit-content" class="mat-elevation-z8">
+    <mat-card-title class="text">Login Here</mat-card-title>
+    <mat-divider></mat-divider>
+    <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+      <mat-form-field appearance="outline">
+        <mat-label for="mail"> Email </mat-label>
+        <input
+          type="email"
+          id="mail"
+          matInput
+          name="mail"
+          formControlName="email"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label for="mail"> Password </mat-label>
+        <input
+          type="password"
+          matInput
+          name="mail"
+          formControlName="password"
+        />
+      </mat-form-field>
+      <mat-divider></mat-divider>
+      <div
+        class="form-group d-flex align-items-center justify-content-between mt-4 mb-0"
+      >    <span>New User <a routerLink="/register">Register Here</a></span>
+        <button
+          [disabled]="loginForm.invalid"
+          class="btn btn-primary"
+          type="submit"
+          style="margin-top: 0; margin-left: 60px; width: 150px"
+        >
+          Sign up
+        </button>
+        <br />
+        <br />
+      </div>
+    </form>
+    <!-- <input class="btn btn-primary" type="submit" value="Submit" class="submit" onclick=" checkOne() ,checkTwo(), checkThree() , checkFour()" style="margin-left: 60px;"> -->
+  </mat-card>
+</div>

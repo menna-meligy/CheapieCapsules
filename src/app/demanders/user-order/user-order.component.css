@@ -1,0 +1,11 @@
+.container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+mat-card{
+  background: linear-gradient(90deg, rgb(217 202 203) 0%, rgb(213 233 228) 98%, rgb(203 199 200) 100%);
+  flex: 0 0 200px;
+  margin: 1em 20px;
+  border-radius: 10px;
+}

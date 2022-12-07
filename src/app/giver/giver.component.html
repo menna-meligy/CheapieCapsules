@@ -1,0 +1,33 @@
+<div class="container">
+  <mat-card>
+    <form [formGroup]="giverForm" (ngSubmit)="onSubmit()">
+      <mat-form-field appearance="outline">
+        <mat-label>Please Enter Medicine Name</mat-label>
+        <input matInput formControlName="name" /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>Quantity of Medicine</mat-label>
+        <input
+          matInput
+          formControlName="quantity"
+          type="number"
+        /> </mat-form-field
+      ><br />
+      <mat-form-field appearance="outline">
+        <mat-label>Expiration Date</mat-label>
+        <input
+          matInput
+          formControlName="expirationdate"
+          [matDatepicker]="picker"
+        />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <button type="submit" mat-raised-button color="warn">Submit</button>
+    </form>
+  </mat-card>
+</div>

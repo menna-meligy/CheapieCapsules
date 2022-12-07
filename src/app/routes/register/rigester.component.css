@@ -1,0 +1,19 @@
+body{
+  background-image: ('../../../assets/images/4.jpg');
+}
+
+.parentSize {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: -1;
+}
+
+.section{
+  width: 106%;
+  display: flex;
+  justify-content: space-between;
+}
+form{
+  margin: 20px;
+}

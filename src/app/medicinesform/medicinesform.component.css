@@ -1,0 +1,12 @@
+table {
+  width: 100%;
+  margin:20px;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+}
+::ng-deep .cdk-overlay-container {
+  z-index: 1200 !important;
+}

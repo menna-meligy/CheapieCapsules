@@ -1,0 +1,11 @@
+<div class="container">
+  <mat-card class="mat-elevation-z8" *ngFor="let medicine of medicineList">
+    <mat-card-header
+      style="display: flex; flex-direction: column; "
+    >
+      <h1>Name : {{ medicine.name }}</h1>
+      <h3>Quantity : {{ medicine.quantity }}</h3>
+      <h4>Expiry Date : {{ medicine.expirationdate | date }}</h4>
+    </mat-card-header>
+  </mat-card>
+</div>
